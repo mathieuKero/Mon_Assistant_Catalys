@@ -17,8 +17,8 @@ Schéma des branches
 
 * Master
   * Release N (incrémentation du nombre en fct des releases sorties)
-   * Branches de dév
+     * Branches de dév
    
-   Les branches de dév se découpent de la façon suivante : 
-   
-   Nommage
+Les branches de dév se découpent de la façon suivante : 
+
+Nommage
