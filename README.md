@@ -16,4 +16,9 @@ Le git est mis en place de façon à adopter une stratégie de branches et de me
 Schéma des branches
 
 * Master
-  * frf
+  * Release N (incrémentation du nombre en fct des releases sorties)
+   * Branches de dév
+   
+   Les branches de dév se découpent de la façon suivante : 
+   
+   Nommage
