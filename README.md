@@ -23,8 +23,8 @@ Les branches de dév fonctionne de la façon suivante :
 
 * Nommage : Nom_Utilisateur/Description
 
- La description doit être concise et tenir en quelques mots. Exemple : "MKE/CREATE_UI_Chatbot
- La description se précède d'un mot clef : CREATE / UPDATE / FIX (en cas de bug à corriger) 
+ > La description doit être concise et tenir en quelques mots. Exemple : "MKE/CREATE_UI_Chatbot"
+ > La description se précède d'un mot clef : CREATE / UPDATE / FIX (en cas de bug à corriger) 
  
  * Fonctionnement : Chaque branche doit correspondre à une évolution / Mise en place / Correction / Etc. Par Un et un seul utilisateur.
 
