@@ -4,4 +4,20 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Include="Views\wwwroot\css\bootstrap\bootstrap.min.css" />
+    <Content Include="Views\wwwroot\css\bootstrap\bootstrap.min.css.map" />
+    <Content Include="Views\wwwroot\css\open-iconic\FONT-LICENSE" />
+    <Content Include="Views\wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css" />
+    <Content Include="Views\wwwroot\css\open-iconic\font\fonts\open-iconic.eot" />
+    <Content Include="Views\wwwroot\css\open-iconic\font\fonts\open-iconic.otf" />
+    <Content Include="Views\wwwroot\css\open-iconic\font\fonts\open-iconic.svg" />
+    <Content Include="Views\wwwroot\css\open-iconic\font\fonts\open-iconic.ttf" />
+    <Content Include="Views\wwwroot\css\open-iconic\font\fonts\open-iconic.woff" />
+    <Content Include="Views\wwwroot\css\open-iconic\ICON-LICENSE" />
+    <Content Include="Views\wwwroot\css\open-iconic\README.md" />
+    <Content Include="Views\wwwroot\css\site.css" />
+    <Content Include="Views\wwwroot\favicon.ico" />
+  </ItemGroup>
+
 </Project>
