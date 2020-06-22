@@ -7,6 +7,10 @@ Contributeurs
 
 ## Documentation d'installation et d'utilisation du projet 
 
+Initialisez le repo git avec 
+
+> git init
+
 Pour initialiser le projet, tirer la dernière branche release disponible. 
 
 > git pull "[Nom_De_La_Branche]"
