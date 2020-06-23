@@ -1,0 +1,17 @@
+﻿@page "/login"
+@inject NavigationManager NavigationManager
+
+
+<h3>Auth</h3>
+
+<h1>Page de connexion</h1>
+
+<button class="btn btn-primary" @onclick="ToAuth">Connexion</button>
+
+@code {
+
+    private void ToAuth()
+    {
+        NavigationManager.NavigateTo("/configuration");
+    }
+}

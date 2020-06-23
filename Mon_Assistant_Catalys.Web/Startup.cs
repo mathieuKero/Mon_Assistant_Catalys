@@ -6,11 +6,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Mon_Assistant_Catalys.Web.Data;
+using Mon_Assistant_Catalys.Web.Models;
 
 namespace Mon_Assistant_Catalys.Web
 {
@@ -29,9 +28,7 @@ namespace Mon_Assistant_Catalys.Web
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
-            services.Configure<RazorPagesOptions>(options => options.RootDirectory = "/Views/Pages");
-            services.AddSingleton<WeatherForecastService>();
-            
+            services.AddSingleton<JsonQuestionnaireContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,7 +53,7 @@ namespace Mon_Assistant_Catalys.Web
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapBlazorHub();
-                    endpoints.MapFallbackToPage("/_Host");
+                endpoints.MapFallbackToPage("/_Host");
             });
         }
     }
