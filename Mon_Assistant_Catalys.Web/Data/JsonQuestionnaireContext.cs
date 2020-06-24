@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json.Linq;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -30,8 +31,18 @@ namespace Mon_Assistant_Catalys.Web.Models
 
         public void LoadData()
         {
-            string path = @"C:\temp\Config.json";
+            string path = "Files\\data_1_CURRENT.json";
 
+            Questionnaire movie1 = JsonConvert.DeserializeObject<Questionnaire>(File.ReadAllText(path));
+
+            // deserialize JSON directly from a file
+            using (StreamReader file = File.OpenText(path))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                Questionnaire movie2 = (Questionnaire)serializer.Deserialize(file, typeof(Questionnaire));
+            }
+
+            /*
             using (StreamReader reader = new StreamReader(path))
             {
                 
@@ -46,9 +57,8 @@ namespace Mon_Assistant_Catalys.Web.Models
 
                 //questionnaire.Add(content);
 
-            
-
             }
+            */
 
         }
 
