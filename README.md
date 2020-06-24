@@ -36,7 +36,12 @@ Les branches de dév fonctionne de la façon suivante :
  
  * Fonctionnement : Chaque branche doit correspondre à une évolution / Mise en place / Correction / Etc. Par Un et un seul utilisateur.
 
-Pour commit vos modifiaction, créez une nouvelle branche à votre nom (CF : Nom des branches de dév)
+Pour commit vos modifiaction **__PENSEZ à RÉCUPÉRER LA DERNIERE VERSION DE L'APPLICATION ! DEPUIS LA BRANCHE RELEASE__**
+
+> git pull 
+__/!\ BRANCHE RELEASE PAS LA VOTRE !!__ 
+
+, créez une nouvelle branche à votre nom (CF : Nom des branches de dév)
 
 > git checkout "[Nom_De_La_Branche]"
 
