@@ -10,7 +10,13 @@ namespace Mon_Assistant_Catalys.Web.Models
     /// </summary>
     public class Questionnaire
     {
-        // TEST
+        /// <summary>
+        ///     Initialise une nouvelle instance de la classe <see cref="Questionnaire"/>.
+        /// </summary>
+        public Questionnaire()
+        {
+
+        }
 
     }
 }
