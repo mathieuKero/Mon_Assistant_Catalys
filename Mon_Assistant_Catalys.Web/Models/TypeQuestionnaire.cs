@@ -12,7 +12,18 @@ namespace Mon_Assistant_Catalys.Web.Models
     public class TypeQuestionnaire
     {
 
+        #region Properties
 
-        
+        #endregion
+
+
+        #region Constructors
+
+        public TypeQuestionnaire()
+        {
+
+        }
+
+        #endregion
     }
 }

@@ -18,47 +18,30 @@ namespace Mon_Assistant_Catalys.Web.Models
         /// <summary>
         ///     Questionnaire.
         /// </summary>
-        private Questionnaire _Questionnaire { get; set; }
+        private Questionnaire Questionnaire { get; set; }
 
         #endregion
 
 
         #region Constructors
 
-        public JsonQuestionnaireContext() => this._Questionnaire = new Questionnaire();
+        public JsonQuestionnaireContext()
+        {
+            this.Questionnaire = new Questionnaire();
+        }
 
         #endregion
 
         public void LoadData()
         {
             string path = "Files\\data_1_CURRENT.json";
-
-            Questionnaire movie1 = JsonConvert.DeserializeObject<Questionnaire>(File.ReadAllText(path));
-
+            
             // deserialize JSON directly from a file
             using (StreamReader file = File.OpenText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
-                Questionnaire movie2 = (Questionnaire)serializer.Deserialize(file, typeof(Questionnaire));
+                this.Questionnaire = (Questionnaire)serializer.Deserialize(file, typeof(Questionnaire));
             }
-
-            /*
-            using (StreamReader reader = new StreamReader(path))
-            {
-                
-
-                //Questionnaire questionnaire = new Questionnaire();
-
-                string json = reader.ReadToEnd();
-
-                JObject obj = JObject.Parse(json);
-                JArray array = (JArray)obj["Search"];
-                Questionnaire content = array.ToObject<Questionnaire>();
-
-                //questionnaire.Add(content);
-
-            }
-            */
 
         }
 
