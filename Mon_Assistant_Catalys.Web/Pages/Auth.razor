@@ -2,9 +2,25 @@
 @inject NavigationManager NavigationManager
 
 
-<h3>Auth</h3>
+<h2>Authentification</h2>
 
-<h1>Page de connexion</h1>
+<p>Veuillez-vous authentifier pour accèder à la page de configuration.</p>
+<br/>
+
+<form>
+</form><form action="" method="get" class="formulaire">
+    <div class="formulaire">
+        <label for="identifiant">Identifiant: </label>
+        <input type="text" name="identifiant" id="identifiant" required>
+    </div>
+    <div class="formulaire">
+        <label for="mdp">Mot de passe: </label>
+        <input type="password" name="mdp" id="mdp" required>
+    </div>
+    <div class="formulaire">
+        <input type="submit" value="Confirmer">
+    </div>
+</form>
 
 <button class="btn btn-primary" @onclick="ToAuth">Connexion</button>
 
