@@ -37,7 +37,10 @@ namespace Mon_Assistant_Catalys.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            JsonQuestionnaireContext json = new JsonQuestionnaireContext();
+            JsonQuestionnaireContext json = JsonQuestionnaireContext.Instance;
+
+            
+
             json.LoadData();
             if (env.IsDevelopment())
             {

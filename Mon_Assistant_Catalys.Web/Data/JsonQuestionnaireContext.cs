@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
@@ -20,6 +21,8 @@ namespace Mon_Assistant_Catalys.Web.Models
         /// </summary>
         private Questionnaire Questionnaire { get; set; }
 
+        private static JsonQuestionnaireContext instance = null;
+
         #endregion
 
 
@@ -27,8 +30,13 @@ namespace Mon_Assistant_Catalys.Web.Models
 
         public JsonQuestionnaireContext()
         {
-            this.Questionnaire = new Questionnaire();
+
         }
+
+        //public JsonQuestionnaireContext()
+        //{
+        //    this.Questionnaire = new Questionnaire();
+        //}
 
         #endregion
 
@@ -43,7 +51,42 @@ namespace Mon_Assistant_Catalys.Web.Models
                 this.Questionnaire = (Questionnaire)serializer.Deserialize(file, typeof(Questionnaire));
             }
 
+            if (File.OpenText(path) != null)
+            {
+                var settings = new JsonSerializerSettings
+                {
+                    Error = (sender, args) =>
+                    {
+                        if (System.Diagnostics.Debugger.IsAttached)
+                        {
+                            System.Diagnostics.Debugger.Break();
+                        }
+                    }
+                };
+
+                StreamReader file = File.OpenText(path);
+
+                object result = JsonConvert.DeserializeObject<Questionnaire>(file.ReadToEnd(), settings);
+            }
+
         }
+
+        #region Properties
+
+        public static JsonQuestionnaireContext Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new JsonQuestionnaireContext();
+                }
+                return instance;
+            }
+        }
+
+        #endregion
+
 
     }
 }
