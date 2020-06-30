@@ -41,8 +41,11 @@ namespace Mon_Assistant_Catalys.Web
 
             
 
-            //json.LoadData();
-            json.initialiseJsonPaskonSaitJamaisOnRegardeVersLeHaut();
+            json.LoadData();
+
+            //TODO : virer : appel de la fonction en cas d'erreur du fichier JSON
+
+            //json.initialiseJsonPaskonSaitJamaisOnRegardeVersLeHaut();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
