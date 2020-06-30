@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Mon_Assistant_Catalys.Web.Services
+﻿namespace Mon_Assistant_Catalys.Web.Services
 {
     /// <summary>
     /// Liaison vers les données et appel des fonction. 
@@ -11,5 +6,7 @@ namespace Mon_Assistant_Catalys.Web.Services
     /// </summary>
     public class QuestionnaireService
     {
+
+
     }
 }
