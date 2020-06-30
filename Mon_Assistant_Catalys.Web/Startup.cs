@@ -41,7 +41,8 @@ namespace Mon_Assistant_Catalys.Web
 
             
 
-            json.LoadData();
+            //json.LoadData();
+            json.initialiseJsonPaskonSaitJamaisOnRegardeVersLeHaut();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
