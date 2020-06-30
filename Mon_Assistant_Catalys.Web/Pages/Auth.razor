@@ -1,28 +1,35 @@
 ﻿@page "/login"
 @inject NavigationManager NavigationManager
 
-
-<h2>Authentification</h2>
-
-<p>Veuillez-vous authentifier pour accèder à la page de configuration.</p>
 <br/>
+<p>Veuillez-vous authentifier pour accèder à la page de configuration.</p>
 
-<form>
-</form><form action="" method="get" class="formulaire">
-    <div class="formulaire">
-        <label for="identifiant">Identifiant: </label>
-        <input type="text" name="identifiant" id="identifiant" required>
+<br/><br/><br/>
+<div class="container">
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-6">
+            <div class="formulaire_admin">
+                <form action="">
+                    <fieldset>
+                        <legend>Connexion administration</legend>
+                        <label for="identifiant">Identifiant</label>
+                        <input id="identifiant" placeholder="" autofocus="" required=""><br>
+                        <label for="mdp">Mot de passe</label>
+                        <input id="mdp" type="password" placeholder="" required=""><br>
+                    </fieldset>
+                    <p><input type="submit" value="Confirmer"></p>
+                </form>
+            </div>
+        </div>
+        <div class="col"></div>
     </div>
-    <div class="formulaire">
-        <label for="mdp">Mot de passe: </label>
-        <input type="password" name="mdp" id="mdp" required>
-    </div>
-    <div class="formulaire">
-        <input type="submit" value="Confirmer">
-    </div>
-</form>
+</div>
 
-<button class="btn btn-primary" @onclick="ToAuth">Connexion</button>
+<!-- TODO: Supprimer quand l'authentification est fonctionnelle -->
+<br/>
+<button class="btn btn-primary" @onclick="ToAuth">Passage secret</button>
+<!---->
 
 @code {
 
@@ -31,3 +38,54 @@
         NavigationManager.NavigateTo("/configuration");
     }
 }
+
+
+<style>
+    div.formulaire_admin {
+        width: 480px;
+    }
+
+    form {
+        width: 475px;
+    }
+
+    fieldset {
+        margin-bottom: 15px;
+        padding: 0 20px 20px 20px;
+        border: 1px solid;
+    }
+
+    legend {
+        padding: 0px 3px;
+        font-weight: bold;
+        font-variant: small-caps;
+    }
+
+    label {
+        width: 110px;
+        display: inline-block;
+        vertical-align: top;
+        margin: 6px;
+    }
+
+    input, textarea {
+        width: 249px;
+    }
+
+    textarea {
+        height: 100px;
+    }
+
+    select {
+        width: 254px;
+    }
+
+    input[type=submit] {
+        width: 150px;
+        padding: 10px;
+        background-color: #EE7813;
+        font-weight: bold;
+        border: hidden;
+        color: white
+    }
+</style>
