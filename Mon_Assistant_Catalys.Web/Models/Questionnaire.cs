@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -21,7 +22,7 @@ namespace Mon_Assistant_Catalys.Web.Models
         public long IdQuestionnaire { get; set; }
 
         [JsonProperty("Questions")]
-        public Question[] Questions { get; set; }
+        public ArrayList Questions { get; set; }
 
         #endregion
 

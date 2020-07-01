@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -27,7 +28,7 @@ namespace Mon_Assistant_Catalys.Web.Models
         public long IdPosition { get; set; }
 
         [JsonProperty("Reponses")]
-        public Reponse[] Reponses { get; set; }
+        public ArrayList Reponses { get; set; }
 
         #endregion
 
@@ -36,6 +37,17 @@ namespace Mon_Assistant_Catalys.Web.Models
         {
 
         }
+
+        public Question(int idQuestion, string texte, long? idReponseParent, long idPosition, ArrayList reponses)
+        {
+            IdQuestion = idQuestion;
+            Texte = texte;
+            IdReponseParent = idReponseParent;
+            IdPosition = idPosition;
+            Reponses = reponses;
+        }
+
+
 
         #endregion
 

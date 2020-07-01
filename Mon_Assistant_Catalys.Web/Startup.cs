@@ -33,8 +33,6 @@ namespace Mon_Assistant_Catalys.Web
         {
             JsonQuestionnaireContext json = JsonQuestionnaireContext.Instance;
 
-            
-
             json.LoadData();
 
             //TODO : virer : appel de la fonction en cas d'erreur du fichier JSON
