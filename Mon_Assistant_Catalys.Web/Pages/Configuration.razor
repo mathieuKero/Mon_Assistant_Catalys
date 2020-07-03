@@ -1,17 +1,202 @@
 ﻿@page "/configuration"
+@using Radzen
 
 <!-- h1>Page de configuration du questionnaire-->
 <div class="main">
     <div class="row">
-        <div class="col" >
-            Il manque l'arborescence ici !
+        <div class="col">
+            <RadzenTree Expand="@LogExpand" Change="@LogChange" Style="width: 100%;">
+                <RadzenTreeItem Text="Produit 1">
+                    <RadzenTreeItem Text="Item 1" />
+                    <RadzenTreeItem Text="Item 2" />
+                </RadzenTreeItem>
+                <RadzenTreeItem Text="Produit 2">
+                    <RadzenTreeItem Text="Item 1" />
+                    <RadzenTreeItem Text="Item 2" />
+                </RadzenTreeItem>
+                <RadzenTreeItem Text="Produit 3">
+                    <RadzenTreeItem Text="Item 1" />
+                    <RadzenTreeItem Text="Item 2" />
+                </RadzenTreeItem>
+            </RadzenTree>
         </div>
         <div class="col-7">
-            <QuestionConfiguration />
+            <h2><i class="fas fa-arrow-right"></i> Question</h2>
+
+            <br />
+            <div class="question">
+                <form action="">
+                    <table>
+                        <tr class="question">
+                            <td class="text">
+                                <input class="question" value="text question" required="" />
+                            </td>
+                            <td class="button">
+                                <button class="btn-update" type="submit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text">
+                                <input class="reponse" value="text reponse 1" required="">
+                            </td>
+                            <td class="button">
+                                <button class="btn-update" type="submit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </td>
+                            <td class="button">
+                                <button class="btn-delete" type="submit">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text">
+                                <input class="reponse" value="text reponse 2" required="">
+                            </td>
+                            <td class="button">
+                                <button class="btn-update" type="submit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </td>
+                            <td class="button">
+                                <button class="btn-delete" type="submit">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text">
+                                <input class="reponse" value="text reponse 3" required="">
+                            </td>
+                            <td class="button">
+                                <button class="btn-update" type="submit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </td>
+                            <td class="button">
+                                <button class="btn-delete" type="submit">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="btn-add">
+                                <button class="btn-add" type="submit">
+                                    + Ajouter une nouvelle réponse
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="btn-save">
+                                <button class="btn-save" type="submit">
+                                    <i class="far fa-save"></i>
+                                    Sauvegarder
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
         </div>
     </div>
 </div>
 
-@code {
+<div>
+    <h3>Event</h3>
+    <RadzenCard Style="overflow: auto; height: 500px;">
+        @foreach (var e in events.OrderByDescending(i => i.Key)) {
+            @e.Value
+            <br/>
+        }
+    </RadzenCard>
+</div>
 
+<div class="row">
+    <div ></div>
+</div>
+
+@code {
+    Dictionary<DateTime, string> events = new Dictionary<DateTime, string>();
+
+    void Log(string eventName, string value)
+    {
+        events.Add(DateTime.Now, $"{eventName}:{value}");
+    }
+
+    void LogChange(TreeEventArgs args)
+    {
+        Log("Change",$"Item Text:{args.Text}");
+    }
+
+    void LogExpand(TreeExpandEventArgs args)
+    {
+        if(args.Value is string text)
+        {
+            Log("Expande", $"Text:{text}");
+        }
+    }
 }
+
+<style>
+    tr {
+        width: 85%;
+        margin-top: 10px;
+    }
+
+    td.text {
+        width: 90%;
+    }
+  
+    td.button {
+        width: 5%;
+    }
+
+    td.btn-add {
+        text-align: right;
+    }
+
+    td.btn-save {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    input {
+        border: 0px;
+        width: 100%;
+    }
+
+        input.question {
+            font-size: 25px;
+        }
+
+        input.reponse {
+            font-size: 20px;
+        }
+
+    button.btn-delete, button.btn-update {
+        width: 30px;
+        height: 30px;
+        border: 0px;
+        background-color: #EE7813;
+        color: white;
+        border-radius: 5px;
+    }
+
+    button.btn-add {
+        margin-top: 20px;
+        border: 0px;
+        background-color: none;
+    }
+
+    button.btn-save {
+        margin-top: 20px;
+        border: 0px;
+        font-size: 20px;
+        color: white;
+        background-color: #EE7813;
+        border-radius: 5px;
+    }
+</style>
