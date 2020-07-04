@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System.Collections.Generic;
 using TestBot.Bots;
+using TestBot.Middleware;
 
 namespace TestBot
 {
