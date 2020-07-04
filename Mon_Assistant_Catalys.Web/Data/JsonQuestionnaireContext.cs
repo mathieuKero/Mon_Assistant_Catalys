@@ -47,13 +47,13 @@ namespace Mon_Assistant_Catalys.Web.Models
             string path = "Files\\data_1_CURRENT.json";
             Questionnaire questionnaire = new Questionnaire();
 
+
             // deserialize JSON directly from a file
             using (StreamReader file = File.OpenText(path))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 questionnaire = (Questionnaire)serializer.Deserialize(file, typeof(Questionnaire));
             }
-
             return questionnaire;
 
         }
@@ -65,9 +65,7 @@ namespace Mon_Assistant_Catalys.Web.Models
         public void FindData(int Id)
         {
 
-
-
-        }
+       }
 
         /// <summary>
         ///     Edition d'une partie du questionnaire ( Question / Réponse )
@@ -92,7 +90,7 @@ namespace Mon_Assistant_Catalys.Web.Models
         public void AddData()
         {
 
-        }
+        //}
 
         #endregion
 
