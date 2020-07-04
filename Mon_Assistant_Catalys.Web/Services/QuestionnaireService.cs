@@ -1,4 +1,6 @@
-﻿namespace Mon_Assistant_Catalys.Web.Services
+﻿using Mon_Assistant_Catalys.Web.Models;
+
+namespace Mon_Assistant_Catalys.Web.Services
 {
     /// <summary>
     /// Liaison vers les données et appel des fonction. 
@@ -6,6 +8,12 @@
     /// </summary>
     public class QuestionnaireService
     {
+
+        public voir tmp()
+        {
+
+        }
+        JsonQuestionnaireContext context = JsonQuestionnaireContext.Instance;
 
 
     }
