@@ -22,10 +22,10 @@ namespace Mon_Assistant_Catalys.Web.Models
         public string Texte { get; set; }
 
         [JsonProperty("IdReponseParent")]
-        public long? IdReponseParent { get; set; }
+        public int? IdReponseParent { get; set; }
 
         [JsonProperty("IdPosition")]
-        public long IdPosition { get; set; }
+        public int IdPosition { get; set; }
 
         [JsonProperty("Reponses")]
         public List<Reponse> Reponses { get; set; }

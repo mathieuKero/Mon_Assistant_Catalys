@@ -19,7 +19,7 @@ namespace Mon_Assistant_Catalys.Web.Models
         public string Nom { get; set; }
 
         [JsonProperty("IdQuestionnaire")]
-        public long IdQuestionnaire { get; set; }
+        public int IdQuestionnaire { get; set; }
 
         [JsonProperty("Questions")]
         public List<Question> Questions { get; set; }
@@ -31,7 +31,7 @@ namespace Mon_Assistant_Catalys.Web.Models
         /// </summary>
         public Questionnaire()
         {
-
+            
         }
 
         #region Methods
