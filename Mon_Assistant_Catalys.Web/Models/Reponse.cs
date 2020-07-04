@@ -11,7 +11,7 @@ namespace Mon_Assistant_Catalys.Web.Models
         #region Properties
 
         [JsonProperty("Id")]
-        public long Id { get; set; }
+        public int Id { get; set; }
 
         [JsonProperty("Texte")]
         public string Texte { get; set; }
@@ -23,6 +23,12 @@ namespace Mon_Assistant_Catalys.Web.Models
         public Reponse()
         {
 
+        }
+
+        public Reponse(int id, string texte)
+        {
+            Id = id;
+            Texte = texte;
         }
 
         #endregion
