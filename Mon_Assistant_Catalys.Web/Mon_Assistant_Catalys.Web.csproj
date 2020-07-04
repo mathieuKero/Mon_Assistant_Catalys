@@ -4,7 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ProjectExtensions><VisualStudio><UserProperties files_4data_31_3current_1json__JsonSchema="https://github.com/fbecart/zinoma/releases/latest/download/zinoma-schema.json" wwwroot_4css_4bootstrap_4bootstrap_1min_1css_1map__JsonSchema="https://json.schemastore.org/tsdrc" /></VisualStudio></ProjectExtensions>
+  <ProjectExtensions><VisualStudio><UserProperties wwwroot_4css_4bootstrap_4bootstrap_1min_1css_1map__JsonSchema="https://json.schemastore.org/tsdrc" /></VisualStudio></ProjectExtensions>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Bot.Builder" Version="4.9.3" />
@@ -12,6 +12,7 @@
     <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="5.0.0-preview.6.20305.6" />
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="5.0.0-preview.6.20305.6" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
   </ItemGroup>
 
 </Project>
