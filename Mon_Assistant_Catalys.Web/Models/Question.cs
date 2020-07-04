@@ -28,7 +28,7 @@ namespace Mon_Assistant_Catalys.Web.Models
         public long IdPosition { get; set; }
 
         [JsonProperty("Reponses")]
-        public ArrayList Reponses { get; set; }
+        public List<Reponse> Reponses { get; set; }
 
         #endregion
 
@@ -38,7 +38,7 @@ namespace Mon_Assistant_Catalys.Web.Models
 
         }
 
-        public Question(int idQuestion, string texte, long? idReponseParent, long idPosition, ArrayList reponses)
+        public Question(int idQuestion, string texte, long? idReponseParent, long idPosition, List<Reponse> reponses)
         {
             IdQuestion = idQuestion;
             Texte = texte;
@@ -48,6 +48,11 @@ namespace Mon_Assistant_Catalys.Web.Models
         }
 
 
+
+        #endregion
+
+        #region Methods
+        
 
         #endregion
 

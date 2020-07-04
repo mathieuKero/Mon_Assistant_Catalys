@@ -22,7 +22,7 @@ namespace Mon_Assistant_Catalys.Web.Models
         public long IdQuestionnaire { get; set; }
 
         [JsonProperty("Questions")]
-        public ArrayList Questions { get; set; }
+        public List<Question> Questions { get; set; }
 
         #endregion
 
@@ -34,5 +34,9 @@ namespace Mon_Assistant_Catalys.Web.Models
 
         }
 
+        #region Methods
+            
+
+        #endregion
     }
 }

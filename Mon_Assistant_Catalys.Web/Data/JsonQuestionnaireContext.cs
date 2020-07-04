@@ -32,7 +32,7 @@ namespace Mon_Assistant_Catalys.Web.Models
 
         public JsonQuestionnaireContext()
         {
-
+            
         }
 
         //public JsonQuestionnaireContext()
@@ -42,6 +42,9 @@ namespace Mon_Assistant_Catalys.Web.Models
 
         #endregion
 
+        /// <summary>
+        ///     Récupération des données du fichier Json et insertion dans Questionnaire
+        /// </summary>
         public void LoadData()
         {
             string path = "Files\\data_1_CURRENT.json";
@@ -52,9 +55,46 @@ namespace Mon_Assistant_Catalys.Web.Models
                 JsonSerializer serializer = new JsonSerializer();
                 this.Questionnaire = (Questionnaire)serializer.Deserialize(file, typeof(Questionnaire));
             }
+
+           // EditData(1);
         }
 
+        /// <summary>
+        ///     
+        /// </summary>
+        /// <param name="Id"></param>
+        public void FindData(int Id)
+        {
 
+
+
+        }
+
+        /// <summary>
+        ///     Edition d'une partie du questionnaire ( Question / Réponse )
+        /// </summary>
+        /// <param name="Id"></param>
+        public void EditData(int id)
+        {
+            /// Réflexion : Récupérer le json avec loaddata puis modifier ? ou alors modifier les données des classes puis mettre à jour le json à partir des classes ?
+            /// A VOIR
+            Question question = new Question();
+            Reponse reponse = new Reponse();
+
+
+            if (question == null)
+            {
+                reponse = this.Questionnaire.Questions.Select(x => x.Reponses.FirstOrDefault(c => c.Id == id)).ToList().FirstOrDefault();
+            }
+            
+
+        }
+
+        public void AddData()
+        {
+
+        }
+        
         //TODO : Virer, cette fonction sert seuelement aux tests en cas d'erreurs du fichier JSON
 
         //public void initialiseJsonPaskonSaitJamaisOnRegardeVersLeHaut()
