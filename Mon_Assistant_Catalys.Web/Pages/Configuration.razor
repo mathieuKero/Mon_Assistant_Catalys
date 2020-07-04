@@ -1,23 +1,17 @@
 ﻿@page "/configuration"
 @using Radzen
 
+
+@code {
+    int currentIdQuestion = 0;
+}
+
 <!-- h1>Page de configuration du questionnaire-->
 <div class="main">
     <div class="row">
         <div class="col">
-            <RadzenTree Expand="@LogExpand" Change="@LogChange" Style="width: 100%;">
-                <RadzenTreeItem Text="Produit 1">
-                    <RadzenTreeItem Text="Item 1" />
-                    <RadzenTreeItem Text="Item 2" />
-                </RadzenTreeItem>
-                <RadzenTreeItem Text="Produit 2">
-                    <RadzenTreeItem Text="Item 1" />
-                    <RadzenTreeItem Text="Item 2" />
-                </RadzenTreeItem>
-                <RadzenTreeItem Text="Produit 3">
-                    <RadzenTreeItem Text="Item 1" />
-                    <RadzenTreeItem Text="Item 2" />
-                </RadzenTreeItem>
+            <RadzenTree Style="width: 100%;">
+
             </RadzenTree>
         </div>
         <div class="col-7">
@@ -37,9 +31,10 @@
                                 </button>
                             </td>
                         </tr>
-                        <tr>
+                        <!--@foreach (Mon_Assistant_Catalys.Web.Models.Reponse reponse in question.Reponses)
+                        {
                             <td class="text">
-                                <input class="reponse" value="text reponse 1" required="">
+                                <input class="reponse" value=reponse.Texte required="">
                             </td>
                             <td class="button">
                                 <button class="btn-update" type="submit">
@@ -51,37 +46,7 @@
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </td>
-                        </tr>
-                        <tr>
-                            <td class="text">
-                                <input class="reponse" value="text reponse 2" required="">
-                            </td>
-                            <td class="button">
-                                <button class="btn-update" type="submit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                            </td>
-                            <td class="button">
-                                <button class="btn-delete" type="submit">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text">
-                                <input class="reponse" value="text reponse 3" required="">
-                            </td>
-                            <td class="button">
-                                <button class="btn-update" type="submit">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                            </td>
-                            <td class="button">
-                                <button class="btn-delete" type="submit">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
+                        }-->
                         <tr>
                             <td class="btn-add">
                                 <button class="btn-add" type="submit">
@@ -107,17 +72,14 @@
 <div>
     <h3>Event</h3>
     <RadzenCard Style="overflow: auto; height: 500px;">
-        @foreach (var e in events.OrderByDescending(i => i.Key)) {
+        <!--@foreach (var e in events.OrderByDescending(i => i.Key))
+        {
             @e.Value
-            <br/>
-        }
+            <br />
+        }-->
     </RadzenCard>
 </div>
-
-<div class="row">
-    <div ></div>
-</div>
-
+<!--
 @code {
     Dictionary<DateTime, string> events = new Dictionary<DateTime, string>();
 
@@ -128,17 +90,17 @@
 
     void LogChange(TreeEventArgs args)
     {
-        Log("Change",$"Item Text:{args.Text}");
+        Log("Change", $"Item Text:{args.Text}");
     }
 
     void LogExpand(TreeExpandEventArgs args)
     {
-        if(args.Value is string text)
+        if (args.Value is string text)
         {
             Log("Expande", $"Text:{text}");
         }
     }
-}
+}-->
 
 <style>
     tr {
@@ -149,7 +111,7 @@
     td.text {
         width: 90%;
     }
-  
+
     td.button {
         width: 5%;
     }
