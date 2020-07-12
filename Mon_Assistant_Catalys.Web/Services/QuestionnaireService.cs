@@ -8,13 +8,13 @@ namespace Mon_Assistant_Catalys.Web.Services
     /// </summary>
     public class QuestionnaireService
     {
+        private JsonQuestionnaireContext jsonContext = JsonQuestionnaireContext.Instance;
 
-        public voir tmp()
+        private readonly Questionnaire questionnaire = new Questionnaire();
+
+        public QuestionnaireService()
         {
-
+           this.questionnaire = jsonContext.LoadData();
         }
-        JsonQuestionnaireContext context = JsonQuestionnaireContext.Instance;
-
-
     }
 }

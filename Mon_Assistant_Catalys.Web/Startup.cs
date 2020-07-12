@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Mon_Assistant_Catalys.Web.Models;
+using Mon_Assistant_Catalys.Web.Services;
 
 namespace Mon_Assistant_Catalys.Web
 {
@@ -25,19 +26,14 @@ namespace Mon_Assistant_Catalys.Web
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<JsonQuestionnaireContext>();
+            services.AddSingleton<QuestionnaireService>();
             
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            JsonQuestionnaireContext json = JsonQuestionnaireContext.Instance;
 
-            json.LoadData();
-
-            //TODO : virer : appel de la fonction en cas d'erreur du fichier JSON
-
-            //json.initialiseJsonPaskonSaitJamaisOnRegardeVersLeHaut();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
