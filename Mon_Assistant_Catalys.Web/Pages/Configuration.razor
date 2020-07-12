@@ -1,11 +1,6 @@
 ﻿@page "/configuration"
 @using Radzen
 
-
-@code {
-    int currentIdQuestion = 0;
-}
-
 <!-- h1>Page de configuration du questionnaire-->
 <div class="main">
     <div class="row">
@@ -31,10 +26,9 @@
                                 </button>
                             </td>
                         </tr>
-                        <!--@foreach (Mon_Assistant_Catalys.Web.Models.Reponse reponse in question.Reponses)
-                        {
+                        <tr>
                             <td class="text">
-                                <input class="reponse" value=reponse.Texte required="">
+                                <input class="reponse" value="text reponse 1">
                             </td>
                             <td class="button">
                                 <button class="btn-update" type="submit">
@@ -46,7 +40,37 @@
                                     <i class="fas fa-trash"></i>
                                 </button>
                             </td>
-                        }-->
+                        </tr>
+                        <tr>
+                            <td class="text">
+                                <input class="reponse" value="text reponse 2">
+                            </td>
+                            <td class="button">
+                                <button class="btn-update" type="submit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </td>
+                            <td class="button">
+                                <button class="btn-delete" type="submit">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text">
+                                <input class="reponse" value="text reponse 3">
+                            </td>
+                            <td class="button">
+                                <button class="btn-update" type="submit">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                            </td>
+                            <td class="button">
+                                <button class="btn-delete" type="submit">
+                                    <i class="fas fa-trash"></i>
+                                </button>
+                            </td>
+                        </tr>
                         <tr>
                             <td class="btn-add">
                                 <button class="btn-add" type="submit">
@@ -69,38 +93,9 @@
     </div>
 </div>
 
-<div>
-    <h3>Event</h3>
-    <RadzenCard Style="overflow: auto; height: 500px;">
-        <!--@foreach (var e in events.OrderByDescending(i => i.Key))
-        {
-            @e.Value
-            <br />
-        }-->
-    </RadzenCard>
-</div>
-<!--
 @code {
-    Dictionary<DateTime, string> events = new Dictionary<DateTime, string>();
-
-    void Log(string eventName, string value)
-    {
-        events.Add(DateTime.Now, $"{eventName}:{value}");
-    }
-
-    void LogChange(TreeEventArgs args)
-    {
-        Log("Change", $"Item Text:{args.Text}");
-    }
-
-    void LogExpand(TreeExpandEventArgs args)
-    {
-        if (args.Value is string text)
-        {
-            Log("Expande", $"Text:{text}");
-        }
-    }
-}-->
+    
+}
 
 <style>
     tr {
