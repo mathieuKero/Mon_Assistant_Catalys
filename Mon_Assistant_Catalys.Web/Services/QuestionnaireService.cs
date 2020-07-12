@@ -1,5 +1,9 @@
 ﻿using Mon_Assistant_Catalys.Web.Models;
 
+using System;
+using System.Collections.Generic;
+
+
 namespace Mon_Assistant_Catalys.Web.Services
 {
     /// <summary>
@@ -12,9 +16,11 @@ namespace Mon_Assistant_Catalys.Web.Services
 
         private readonly Questionnaire questionnaire = new Questionnaire();
 
+
         public QuestionnaireService()
         {
            this.questionnaire = jsonContext.LoadData();
         }
+
     }
 }
