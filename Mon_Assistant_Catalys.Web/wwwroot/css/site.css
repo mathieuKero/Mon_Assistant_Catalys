@@ -181,3 +181,62 @@ app {
         display: block;
     }
 }
+
+tr {
+    width: 85%;
+    margin-top: 10px;
+}
+
+td.text {
+    width: 90%;
+}
+
+td.button {
+    width: 5%;
+}
+
+td.btn-add {
+    text-align: right;
+}
+
+td.btn-save {
+    text-align: center;
+    margin-top: 20px;
+}
+
+input {
+    border: 0px;
+    width: 100%;
+}
+
+    input.question {
+        font-size: 25px;
+    }
+
+    input.reponse {
+        font-size: 20px;
+    }
+
+button.btn-delete, button.btn-update {
+    width: 30px;
+    height: 30px;
+    border: 0px;
+    background-color: #EE7813;
+    color: white;
+    border-radius: 5px;
+}
+
+button.btn-add {
+    margin-top: 20px;
+    border: 0px;
+    background-color: none;
+}
+
+button.btn-save {
+    margin-top: 20px;
+    border: 0px;
+    font-size: 20px;
+    color: white;
+    background-color: #EE7813;
+    border-radius: 5px;
+}

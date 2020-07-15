@@ -21,7 +21,7 @@ namespace Mon_Assistant_Catalys.Web.Models
         /// <summary>
         ///     Questionnaire.
         /// </summary>
-        //public Questionnaire Questionnaire { get; private set; }
+        public Questionnaire Questionnaire { get; private set; }
 
         private static JsonQuestionnaireContext instance = null;
 

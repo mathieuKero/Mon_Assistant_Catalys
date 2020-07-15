@@ -12,11 +12,8 @@
     <PackageReference Include="Microsoft.Extensions.Caching.Abstractions" Version="5.0.0-preview.6.20305.6" />
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="5.0.0-preview.6.20305.6" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-<<<<<<< HEAD
-    <PackageReference Include="Radzen.Blazor" Version="2.10.9" />
-=======
+    <PackageReference Include="Radzen.Blazor" Version="2.10.16" />
     <PackageReference Include="System.Linq" Version="4.3.0" />
->>>>>>> 2748cf2d920bd4848489de486dcb183ad47cba27
   </ItemGroup>
 
 </Project>

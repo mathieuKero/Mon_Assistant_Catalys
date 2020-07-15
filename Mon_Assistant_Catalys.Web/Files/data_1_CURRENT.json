@@ -6,7 +6,7 @@
     {
       "IdQuestion": 1,
       "Texte": "Quel est le type de presatation ?",
-      "IdReponseParent": null,
+      "IdReponseParent": 0,
       "IdPosition": 0,
       "Reponses": [
         {
@@ -24,10 +24,6 @@
         {
           "Id": 111,
           "Texte": "Employé"
-        },
-        {
-          "Id": 112,
-          "Texte": "Arrêté"
         },
         {
           "Id": 113,
@@ -56,26 +52,6 @@
       ]
     },
     {
-      "IdQuestion": 4,
-      "Texte": "Quel est son type d'arrêt ?",
-      "IdReponseParent": 112,
-      "IdPosition": 2,
-      "Reponses": [
-        {
-          "Id": 131,
-          "Texte": "Congé maladie"
-        },
-        {
-          "Id": 132,
-          "Texte": "Congé maternité"
-        },
-        {
-          "Id": 133,
-          "Texte": "Congé paternité"
-        }
-      ]
-    },
-    {
       "IdQuestion": 5,
       "Texte": "Quelle est la région de sa formation ?",
       "IdReponseParent": 113,
@@ -84,18 +60,6 @@
         {
           "Id": 141,
           "Texte": "BZH"
-        },
-        {
-          "Id": 142,
-          "Texte": "PDL"
-        },
-        {
-          "Id": 143,
-          "Texte": "Normandie"
-        },
-        {
-          "Id": 144,
-          "Texte": "IDF"
         }
       ]
     },
@@ -216,16 +180,7 @@
       "Texte": "Existe-t-il une prise en charge totale ?",
       "IdReponseParent": 172,
       "IdPosition": 4,
-      "Reponses": [
-        {
-          "Id": 221,
-          "Texte": "Oui"
-        },
-        {
-          "Id": 222,
-          "Texte": "Non"
-        }
-      ]
+      "Reponses": []
     },
     {
       "IdQuestion": 14,
@@ -272,32 +227,14 @@
       "Texte": "Est-il elligible au CPF ?",
       "IdReponseParent": 211,
       "IdPosition": 5,
-      "Reponses": [
-        {
-          "Id": 251,
-          "Texte": "Oui"
-        },
-        {
-          "Id": 252,
-          "Texte": "Non"
-        }
-      ]
+      "Reponses": []
     },
     {
       "IdQuestion": 17,
       "Texte": "Est-il elligible au CPF ?",
       "IdReponseParent": 212,
       "IdPosition": 5,
-      "Reponses": [
-        {
-          "Id": 261,
-          "Texte": "Oui"
-        },
-        {
-          "Id": 262,
-          "Texte": "Non"
-        }
-      ]
+      "Reponses": []
     },
     {
       "IdQuestion": 18,
