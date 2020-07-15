@@ -38,7 +38,7 @@ namespace Mon_Assistant_Catalys.Web.Models
 
         }
 
-        public Question(int idQuestion, string texte, long? idReponseParent, long idPosition, List<Reponse> reponses)
+        public Question(int idQuestion, string texte, int? idReponseParent, int idPosition, List<Reponse> reponses)
         {
             IdQuestion = idQuestion;
             Texte = texte;

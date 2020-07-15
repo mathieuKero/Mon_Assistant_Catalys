@@ -14,7 +14,7 @@ namespace Mon_Assistant_Catalys.Web.Models
     /// <summary>
     ///     Cette classe va lire les données du questionnaire.
     /// </summary>
-    public class JsonQuestionnaireContext
+    public sealed class JsonQuestionnaireContext
     {
         #region Fields
 
@@ -90,7 +90,7 @@ namespace Mon_Assistant_Catalys.Web.Models
         public void AddData()
         {
 
-        //}
+        }
 
         #endregion
 
