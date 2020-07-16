@@ -14,7 +14,7 @@ namespace Mon_Assistant_Catalys.Web.Models
     /// <summary>
     ///     Cette classe va lire les données du questionnaire.
     /// </summary>
-    public sealed class JsonQuestionnaireContext
+    public sealed class JsonQuestionnaireContext    
     {
         #region Fields
 
@@ -51,6 +51,7 @@ namespace Mon_Assistant_Catalys.Web.Models
             // deserialize JSON directly from a file
             using (StreamReader file = File.OpenText(path))
             {
+
                 JsonSerializer serializer = new JsonSerializer();
                 questionnaire = (Questionnaire)serializer.Deserialize(file, typeof(Questionnaire));
             }

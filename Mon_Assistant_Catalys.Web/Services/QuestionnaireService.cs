@@ -58,14 +58,14 @@ namespace Mon_Assistant_Catalys.Web.Services
                 {
                     //Si la question associée à la réponse est nulle c'est qu'elle n'a pas été encore attribuée. 
                     //A l'inverse si la question associée à la réponse n'est pas nulle c'est que la question enfant à été associée et qu'il ne faut pas la retraiter
-                    if (reponse.question == null)
+                    if (reponse.Question == null)
                     {
                         //Attribution de la question parente et enfante
-                        reponse.question = questionnaire.Questions.Find(q => q.IdReponseParent == reponse.Id);
-                        reponse.question.PreviousQuestion = question;
+                        reponse.Question = questionnaire.Questions.Find(q => q.IdReponseParent == reponse.Id);
+                        reponse.Question.PreviousQuestion = question;
 
                         //Attribution sur la question enfante
-                        ConstructTree(reponse.question);
+                        ConstructTree(reponse.Question);
 
                     }
                 }

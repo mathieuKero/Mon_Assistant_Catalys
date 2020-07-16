@@ -16,7 +16,7 @@ namespace Mon_Assistant_Catalys.Web.Models
         [JsonProperty("Texte")]
         public string Texte { get; set; }
 
-        public Question question { get; set; }
+        public Question Question { get; set; }
         #endregion
 
         #region Constructors
