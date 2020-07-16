@@ -31,7 +31,7 @@ namespace Mon_Assistant_Catalys.Web.Services
         /// </summary>
         /// <param name="q">Questionnaire à restructurer</param>
         /// <returns>Questionnaire restructuré</returns>
-        public List<Question> displayTree(List<Question> q)
+        public List<Question> DisplayTree(List<Question> q)
         {
             //Optention des premières questions
             q = questionnaire.Questions.FindAll(q => q.IdReponseParent == 0);
