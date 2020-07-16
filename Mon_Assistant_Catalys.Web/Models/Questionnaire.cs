@@ -26,6 +26,8 @@ namespace Mon_Assistant_Catalys.Web.Models
 
         #endregion
 
+        #region Constructors
+
         /// <summary>
         ///     Initialise une nouvelle instance de la classe <see cref="Questionnaire"/>.
         /// </summary>
@@ -34,8 +36,10 @@ namespace Mon_Assistant_Catalys.Web.Models
             
         }
 
+        #endregion
+
         #region Methods
-            
+
 
         #endregion
     }

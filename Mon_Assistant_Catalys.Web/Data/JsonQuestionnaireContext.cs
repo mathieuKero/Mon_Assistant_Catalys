@@ -14,14 +14,14 @@ namespace Mon_Assistant_Catalys.Web.Models
     /// <summary>
     ///     Cette classe va lire les données du questionnaire.
     /// </summary>
-    public class JsonQuestionnaireContext
+    public sealed class JsonQuestionnaireContext    
     {
         #region Fields
 
         /// <summary>
         ///     Questionnaire.
         /// </summary>
-        //public Questionnaire Questionnaire { get; private set; }
+        public Questionnaire Questionnaire { get; private set; }
 
         private static JsonQuestionnaireContext instance = null;
 
@@ -51,6 +51,7 @@ namespace Mon_Assistant_Catalys.Web.Models
             // deserialize JSON directly from a file
             using (StreamReader file = File.OpenText(path))
             {
+
                 JsonSerializer serializer = new JsonSerializer();
                 questionnaire = (Questionnaire)serializer.Deserialize(file, typeof(Questionnaire));
             }
@@ -90,7 +91,7 @@ namespace Mon_Assistant_Catalys.Web.Models
         public void AddData()
         {
 
-        //}
+        }
 
         #endregion
 
