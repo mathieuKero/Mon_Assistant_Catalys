@@ -60,7 +60,7 @@ namespace Mon_Assistant_Catalys.Web.Models
         }
 
         /// <summary>
-        ///     
+        ///     Recherche d'un élément dans l'arbre
         /// </summary>
         /// <param name="Id"></param>
         public void FindData(int Id)
@@ -88,6 +88,9 @@ namespace Mon_Assistant_Catalys.Web.Models
 
         }
 
+        /// <summary>
+        ///     Ajout d'un élément dans l'arbre
+        /// </summary>
         public void AddData()
         {
 
