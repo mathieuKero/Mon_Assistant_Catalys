@@ -3,35 +3,15 @@
 @using Mon_Assistant_Catalys.Web.Models
 @using Mon_Assistant_Catalys.Web.Services
 
+<meta charset="UTF-8">
+
 <!-- h1>Page de configuration du questionnaire-->
 <div class="main">
     <div class="row">
         <div class="col-md-7">
 
-            <RadzenTree Style="width: 100%; height: 300px">
-                <RadzenTreeItem Text="LCR">
-                    <RadzenTreeItem Text="Employé">
-                        <RadzenTreeItem Text="Cdi">
-
-                        </RadzenTreeItem>
-                        <RadzenTreeItem Text="Cdd">
-                            <RadzenTreeItem Text="Plus de 6 mois">
-
-                            </RadzenTreeItem>
-                            <RadzenTreeItem Text="Moins de 6 mois">
-
-                            </RadzenTreeItem>
-                        </RadzenTreeItem>
-                        <RadzenTreeItem Text="Ctt">
-
-                        </RadzenTreeItem>
-                    </RadzenTreeItem>
-                    <RadzenTreeItem Text="En formation">
-                        <RadzenTreeItem Text="BZH">
-
-                        </RadzenTreeItem>
-                    </RadzenTreeItem>
-                </RadzenTreeItem>
+            <RadzenTree Data="@toDisplayTree" Expand="@OnExpand">
+                <RadzenTreeLevel TextProperty="Texte" />
             </RadzenTree>
 
         </div>
@@ -127,10 +107,48 @@
     QuestionnaireService context = new QuestionnaireService();
     List<Question> toDisplayQuestionnaire = new List<Question>();
 
+    List<Question> toDisplayTree = null;
+
     protected override void OnInitialized()
     {
         questionnaire = context.GetQuestionnaire();
-        context.displayTree(toDisplayQuestionnaire);
+
+        toDisplayTree = new List<Question>();
+
+        toDisplayTree = context.displayTree(toDisplayQuestionnaire);
+    }
+
+    void OnExpand(TreeExpandEventArgs args)
+    {
+        Question currentQuestion = args.Value as Question;
+
+        List<Question> listQuestion = new List<Question>();
+
+        try
+        {
+            foreach (Reponse reponse in currentQuestion.Reponses)
+            {
+                listQuestion.Add(reponse.Question);
+            }
+
+            args.Children.Data = listQuestion;
+            args.Children.TextProperty = "Texte";
+
+            foreach (Question question in listQuestion)
+            {
+                if (question.Reponses == null)
+                {
+                    args.Children.HasChildren = (Reponse) => false;
+                }
+            }
+
+        }
+        catch (Exception)
+        {
+            //TODO add log messages
+            throw;
+        }
+
     }
 }
 

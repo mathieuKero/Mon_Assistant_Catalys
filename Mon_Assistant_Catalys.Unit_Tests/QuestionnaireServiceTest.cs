@@ -19,7 +19,6 @@ namespace Mon_Assistant_Catalys.Unit_Tests
 
             //Act
             Assert.IsNotNull(context.GetQuestionnaire(), "Le questionnaire chargée n'est pas conforme ou n'existe pas.");
-                     
         }
     }
 }
